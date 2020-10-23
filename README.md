@@ -1,1 +1,1 @@
-# A React boilerplate setup with webpack and babel
+# A React boilerplate setup with webpack and babel setup
