@@ -6,8 +6,9 @@
   "scripts": {
     "babel": "babel src --out-dir lib",
     "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix .",
     "format": "prettier --ignore-path .gitignore --write .",
-    "check-format": "prettier --list-different .",
+    "check-format": "prettier --ignore-path .gitignore --list-different .",
     "validate": "yarn lint && yarn test && yarn build",
     "validate-parallel": "npm-run-all --parallel format lint test build",
     "test": "jest",
@@ -67,7 +68,7 @@
   },
   "lint-staged": {
     "**/*.+(js|jsx|ts|tsx|json|css)": [
-      "prettier --write"
+      "prettier --ignore-path .gitignore --write"
     ]
   },
   "repository": {
