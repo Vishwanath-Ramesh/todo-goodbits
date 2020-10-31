@@ -1,0 +1,12 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1em;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+}

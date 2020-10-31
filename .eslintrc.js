@@ -11,7 +11,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: 'detect', // React version. "detect" automatically picks the version you have installed.
+      version: 'detect', // The version of React. "detect" - automatically picks the version which is currently installed.
     },
   },
   overrides: [
@@ -30,15 +30,17 @@ module.exports = {
       },
     },
   ],
+  plugins: ['react'],
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'eslint-config-prettier',
+    'eslint:recommended', // Rules recommended by eslint itself
+    'plugin:react/recommended', // Set of recommended rules for React app
+    'eslint-config-prettier', // Turns off all rules that are unnecessary or might conflict with Prettier
   ],
   // Instead of specifying eslint rules individually, we can also use pre built configurations. eslint-config-prettier : Turns off all rules that are unnecessary or might conflict with Prettier.
   rules: {
-    strict: ['error', 'never'], // Check for explicit 'use strict'
-    'no-console': 'error', // Disallows console in the code
+    strict: ['error', 'never'], // Check for explicit use of 'use strict'
+    'no-console': 'error', // Disallows usage of console in the code
+    /* The below rules were included by default in eslint recommendation('eslint:recommended') */
     // "valid-typeof": "error", // Check for invalid typeof check
     // "no-unsafe-negation": "error", // Checks for unexpected negation before the left operand. Eg: if(!one === two)
     // "no-unused-vars": "error", // Checks for unused variables
@@ -52,11 +54,6 @@ module.exports = {
     commonjs: true,
     jest: true,
     es6: true,
+    es2020: true,
   },
 }
-
-/*
-Notes:
-    - Press ctrl+. to get the possible options for eslint errors
-    - To automatically fix eslint error, run npm eslint . --fix
-*/
