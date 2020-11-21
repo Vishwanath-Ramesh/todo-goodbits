@@ -1,11 +1,15 @@
 const isProd = String(process.env.NODE_ENV).toLowerCase() === 'production'
 
-var serverConfig = {}
+function getServerConfiguration() {
+  if (isProd)
+    return {
+      baseURL: '',
+    }
 
-if (isProd) {
-  serverConfig = {}
-} else {
-  serverConfig = {}
+  return {
+    baseURL: '',
+  }
 }
+const serverConfig = getServerConfiguration()
 
-export { serverConfig }
+export default { serverConfig }

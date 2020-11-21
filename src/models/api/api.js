@@ -1,18 +1,17 @@
 import axios from 'axios'
-import { serverConfig } from '../../configs/configs'
+import configs from '../../configs/configs'
 
 const instance = axios.create({
-  baseURL: serverConfig?.APIDomain ?? '',
+  baseURL: configs.serverConfig?.baseURL ?? '',
   headers: {
     'content-type': 'application/json',
-    'Ocp-Apim-Subscription-Key': serverConfig?.ApimSubscriptionKey ?? '',
   },
 })
 
 const getAPIData = async (method, url, postData) => {
   const response = await instance({
-    method: method,
-    url: url,
+    method,
+    url,
     data: postData,
   })
   return response

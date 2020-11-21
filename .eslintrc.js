@@ -1,11 +1,12 @@
 const path = require('path')
 
 module.exports = {
+  root: true,
   parserOptions: {
-    ecmaVersion: 2020, //Specifying the version of ECMAScript syntax we are going to use
+    ecmaVersion: 2020, // Specifying the version of ECMAScript syntax we are going to use
     sourceType: 'module', // Specifying type of source type which we are using either 'script(default)' or 'module'
     ecmaFeatures: {
-      //Specifying additional language features we are using
+      // Specifying additional language features we are using
       jsx: true,
     },
   },
@@ -15,10 +16,6 @@ module.exports = {
     },
   },
   overrides: [
-    {
-      files: ['**/src/**'],
-      settings: { 'import/resolver': 'webpack' },
-    },
     {
       files: ['**/__tests__/**'],
       settings: {
@@ -30,16 +27,19 @@ module.exports = {
       },
     },
   ],
-  plugins: ['react'],
+  plugins: ['prettier'],
   extends: [
-    'eslint:recommended', // Rules recommended by eslint itself
-    'plugin:react/recommended', // Set of recommended rules for React app
-    'eslint-config-prettier', // Turns off all rules that are unnecessary or might conflict with Prettier
+    'airbnb', // Set of recommended rules from Airbnb for JavaScript/React
+    'airbnb/hooks', // Set of recommended rules from Airbnb for React hooks
+    'prettier', // Turns off all rules that are unnecessary or might conflict with Prettier
+    'prettier/react', // airbnb enables eslint-plugin-react rules internally, so "prettier/react" is needed
   ],
   // Instead of specifying eslint rules individually, we can also use pre built configurations. eslint-config-prettier : Turns off all rules that are unnecessary or might conflict with Prettier.
   rules: {
     strict: ['error', 'never'], // Check for explicit use of 'use strict'
     'no-console': 'error', // Disallows usage of console in the code
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }], // Temporarily added to support JSX in .js file
     /* The below rules were included by default in eslint recommendation('eslint:recommended') */
     // "valid-typeof": "error", // Check for invalid typeof check
     // "no-unsafe-negation": "error", // Checks for unexpected negation before the left operand. Eg: if(!one === two)

@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ArrowBack as ArrowBackIcon } from '@material-ui/icons'
 
 import './PageNotFound.css'
 
@@ -13,7 +12,9 @@ const PageNotFound = (props) => {
       </div>
       <div className="pagenotfound__back">
         <span className="pagenotfound__backicon">
-          <ArrowBackIcon onClick={() => props.history.goBack()} />
+          <button type="button" onClick={() => props.history.goBack()}>
+            {'<--'}
+          </button>
         </span>
         <span className="pagenotfound__backtext">Go back</span>
       </div>
@@ -22,7 +23,9 @@ const PageNotFound = (props) => {
 }
 
 PageNotFound.propTypes = {
-  history: PropTypes.any,
+  history: PropTypes.shape({
+    goBack: PropTypes.func,
+  }).isRequired,
 }
 
 export default PageNotFound
