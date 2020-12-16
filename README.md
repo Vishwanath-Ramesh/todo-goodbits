@@ -9,6 +9,8 @@ This is a boilerplate setup project for React application
 - Axios
 - Webpack
 - Babel
+- Eslint
+- Jest
 
 ## Project Setup
 
