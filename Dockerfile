@@ -6,6 +6,6 @@ COPY ./package.json ./
 
 RUN yarn install
 
-COPY ./ ./
-
 RUN yarn build
+
+COPY ./dist ./
