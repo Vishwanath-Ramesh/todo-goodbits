@@ -12,4 +12,4 @@ RUN yarn build
 
 FROM nginx
 EXPOSE 80
-COPY --from=builder ./dist /usr/share/nginx/html
+COPY --from=builder /usr/app/dist /usr/share/nginx/html
