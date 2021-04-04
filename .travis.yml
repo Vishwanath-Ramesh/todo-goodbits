@@ -9,7 +9,9 @@ script:
   - docker run react-boilerplate npm run test -- --coverage
 
 before_deploy:
-  - docker run -v $(TRAVIS_BUILD_DIR)/dist:/dist react-boilerplate
+  - docker run react-boilerplate pwd
+  - docker run react-boilerplate ls
+  - docker run -v $(TRAVIS_BUILD_DIR)/dist:/usr/app/dist react-boilerplate
 
 deploy:
   provider: pages
