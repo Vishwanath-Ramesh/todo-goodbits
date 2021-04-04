@@ -6,12 +6,13 @@ before_install:
   - docker build -t react-boilerplate .
 
 script:
-  - docker run react-boilerplate npm run test -- --coverage
+  - docker run -v ${TRAVIS_BUILD_DIR}/dist:/dist react-boilerplate npm run test -- --coverage
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN  
   keep_history: true
+  local_dir: dist
   on:
     branch: master
