@@ -11,7 +11,7 @@ script:
 before_deploy:
   - docker run react-boilerplate pwd
   - docker run react-boilerplate ls
-  - docker run -v ${TRAVIS_BUILD_DIR}/dist:/dist react-boilerplate
+  - docker run -v ${TRAVIS_BUILD_DIR}/dist:/ react-boilerplate
 
 deploy:
   provider: pages
