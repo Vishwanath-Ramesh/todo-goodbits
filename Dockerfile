@@ -9,3 +9,7 @@ RUN yarn install
 COPY ./ ./
 
 RUN yarn build
+
+FROM nginx
+
+COPY --from=builder /usr/app/dist /usr/share/nginx/html
