@@ -9,5 +9,3 @@ RUN yarn install
 COPY ./ ./
 
 RUN yarn build
-
-COPY ./dist ${TRAVIS_BUILD_DIR}
