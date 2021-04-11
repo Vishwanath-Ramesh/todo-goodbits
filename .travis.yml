@@ -8,13 +8,12 @@ before_install:
 script:
   - docker run react-boilerplate pwd
   - docker run react-boilerplate ls
-  - docker run react-boilerplate cp -R $TRAVIS_BUILD_DIR /usr/share/nginx/html
+  - docker run react-boilerplate cp -R /usr/share/nginx/html $TRAVIS_BUILD_DIR
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN  
   keep_history: true
-  local_dir: dist
   on:
     branch: master
