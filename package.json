@@ -18,7 +18,15 @@
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "setup": "yarn install && yarn validate",
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "docker-build": "docker build -t react-boilerplate .",
+    "docker-run": "docker run react-boilerplate",
+    "docker-start": "docker start react-boilerplate",
+    "docker-stop": "docker stop react-boilerplate",
+    "docker-clean-containers": "docker rm $(docker ps -aq)",
+    "docker-clean-images": "docker rmi $(docker images -aq)",
+    "docker-clean": "yarn docker-clean-containers && yarn docker-clean-images",
+    "docker-enter": "docker exec -ti react-boilerplate bash"
   },
   "keywords": [],
   "author": "Vishwanath R",

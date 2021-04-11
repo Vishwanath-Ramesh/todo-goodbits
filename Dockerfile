@@ -9,3 +9,5 @@ RUN yarn install
 COPY ./ ./
 
 RUN yarn build
+RUN mkdir test2
+RUN ls
