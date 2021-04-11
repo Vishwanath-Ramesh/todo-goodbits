@@ -8,7 +8,7 @@ before_install:
 script:
   - docker run react-boilerplate pwd
   - docker run react-boilerplate ls
-  - docker run react-boilerplate cp -R /usr/share/nginx/html/ ~/home/travis/build/Vishwanath-Ramesh/react-boilerplate/
+  - docker run react-boilerplate cp -R /usr/share/nginx/html/ ~/build/Vishwanath-Ramesh/react-boilerplate/
 
 deploy:
   provider: pages
