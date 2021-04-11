@@ -8,9 +8,7 @@ before_install:
 script:
   - docker run react-boilerplate pwd
   - docker run react-boilerplate ls
-  - docker run -v $TRAVIS_BUILD_DIR/dist:/test react-boilerplate npm run test -- --coverage
-  - docker run react-boilerplate rm $TRAVIS_BUILD_DIR/*
-  - docker run react-boilerplate cp -R dist/ $TRAVIS_BUILD_DIR/
+  - docker run -v $TRAVIS_BUILD_DIR/dist:/usr/share/nginx/html react-boilerplate npm run test -- --coverage
 
 deploy:
   provider: pages
