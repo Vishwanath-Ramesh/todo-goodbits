@@ -1,7 +1,7 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
+// const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin') // * Not supported since webpack 5
 
 const env = String(process.env.NODE_ENV).toLowerCase()
 
@@ -19,9 +19,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
     }),
-    new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: 'async',
-    }), // Load bundle scripts asynchronously
+    // * Not supported since webpack 5
+    // new ScriptExtHtmlWebpackPlugin({
+    //   defaultAttribute: 'async',
+    // }), // Load bundle scripts asynchronously
   ],
   devServer: {
     // host: '0.0.0.0', // Uncomment this, If you want your server to be accessible externally(Mobile etc.)
@@ -43,8 +44,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(eot|png|svg|jpg|gif|woff|woff2|otf)$/,
