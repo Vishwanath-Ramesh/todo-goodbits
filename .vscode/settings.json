@@ -1,6 +1,11 @@
 {
+  "terminal.integrated.profiles.windows": {
+    "C:\\Program Files\\Git\\bin\\bash.exe (migrated)": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "args": []
+    }
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "eslint.alwaysShowStatus": true,
@@ -26,7 +31,7 @@
     "javascript": "javascriptreact"
   },
   "workbench.iconTheme": "material-icon-theme",
-  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
   "editor.suggestSelection": "first",
   "editor.smoothScrolling": false,
   "breadcrumbs.enabled": true,

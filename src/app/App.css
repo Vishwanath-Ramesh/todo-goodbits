@@ -1,5 +1,12 @@
 html {
+  box-sizing: border-box;
   font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
 body {

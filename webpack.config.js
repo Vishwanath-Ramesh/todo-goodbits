@@ -3,10 +3,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin') // * Not supported since webpack 5
 
-const env = String(process.env.NODE_ENV).toLowerCase()
-
-module.exports = {
-  mode: env || 'development',
+module.exports = (env) => ({
+  mode: env.NODE_ENV || 'development',
   entry: './src/index.js',
   output: {
     filename: '[name].bundle.js',
@@ -33,7 +31,7 @@ module.exports = {
     hot: true, // Enables HMR
     historyApiFallback: true, // In case 404 responses, root(index.html) file will be served,
   },
-  devtool: env === 'production' ? false : 'source-map', // How source codes are mapped/shown in the browser
+  devtool: env.NODE_ENV === 'production' ? false : 'source-map', // How source codes are mapped/shown in the browser
   module: {
     rules: [
       {
@@ -53,4 +51,4 @@ module.exports = {
       },
     ],
   },
-}
+})
