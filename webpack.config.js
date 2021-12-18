@@ -1,3 +1,4 @@
+const { BannerPlugin } = require('webpack')
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -10,12 +11,15 @@ module.exports = (env) => ({
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, 'dist'), // Output build directory name. From v5, this is default
-    publicPath: '/react-boilerplate/', // The bundled files will be available in the browser under this path. Eg. A request to a chunk will look like /1.chunk.js. In our case('/'), it's relative to HTML page
+    publicPath: '/', // The bundled files will be available in the browser under this path. Eg. A request to a chunk will look like /1.chunk.js. In our case('/'), it's relative to HTML page
   },
   plugins: [
     new CleanWebpackPlugin(), // Remove HTML file and re-create on each build
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
+    }),
+    new BannerPlugin({
+      banner: `Written by Vishwanath Rameshbabu <vishwanathr.dev@outlook.com>, `,
     }),
     // * Not supported since webpack 5
     // new ScriptExtHtmlWebpackPlugin({
