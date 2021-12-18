@@ -16,7 +16,7 @@ For [Fullstack boilerplate](https://github.com/Vishwanath-Ramesh/fullstack-boile
 
 ## Project Setup
 
-Install dependencies and devdependencies, run:
+Install dependencies and dev dependencies, run:
 
 using npm
 
