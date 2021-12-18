@@ -91,5 +91,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vishwanath-Ramesh/react-webpack-boilerplate.git"
-  }
+  },
+  "homepage": "https://vishwanath-ramesh.github.io/react-boilerplate/"
 }
