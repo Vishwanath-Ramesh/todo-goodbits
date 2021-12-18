@@ -5,11 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = (env) => ({
   mode: env.NODE_ENV || 'development',
-  // entry: './src/index.js', // From v5, this is default
+  entry: './src/index.js', // From v5, this is default
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
-    // path: path.resolve(__dirname, 'dist'), // Output build directory name. From v5, this is default
+    path: path.resolve(__dirname, 'dist'), // Output build directory name. From v5, this is default
     publicPath: '/', // The bundled files will be available in the browser under this path. Eg. A request to a chunk will look like /1.chunk.js. In our case('/'), it's relative to HTML page
   },
   plugins: [
