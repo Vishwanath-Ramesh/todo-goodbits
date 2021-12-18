@@ -13,5 +13,6 @@ deploy:
     secure: $FIREBASE_TOKEN
   keep_history: true
   local_dir: dist
+  project: react-boilerplate-3641f
   on:
     branch: master
