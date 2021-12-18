@@ -10,7 +10,7 @@ module.exports = (env) => ({
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, 'dist'), // Output build directory name. From v5, this is default
-    publicPath: '/', // The bundled files will be available in the browser under this path. Eg. A request to a chunk will look like /1.chunk.js. In our case('/'), it's relative to HTML page
+    publicPath: '/react-boilerplate/', // The bundled files will be available in the browser under this path. Eg. A request to a chunk will look like /1.chunk.js. In our case('/'), it's relative to HTML page
   },
   plugins: [
     new CleanWebpackPlugin(), // Remove HTML file and re-create on each build

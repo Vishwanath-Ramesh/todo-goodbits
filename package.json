@@ -18,6 +18,7 @@
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "setup": "yarn install && yarn validate",
     "build": "webpack --env NODE_ENV=production",
+    "deploy": "gh-pages -d dist",
     "dev": "webpack serve --env NODE_ENV=development",
     "docker-build": "docker build -t react-boilerplate .",
     "docker-run": "docker run react-boilerplate",
@@ -92,5 +93,17 @@
     "type": "git",
     "url": "git+https://github.com/Vishwanath-Ramesh/react-webpack-boilerplate.git"
   },
-  "homepage": "https://vishwanath-ramesh.github.io/react-boilerplate/"
+  "homepage": "https://vishwanath-ramesh.github.io/react-boilerplate/",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
