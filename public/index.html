@@ -4,6 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React Boilerplate</title>
+    <style>
+      html {
+        box-sizing: border-box;
+        font-size: 100%;
+      }
+
+      *,
+      *::after,
+      *::before {
+        box-sizing: inherit;
+      }
+
+      body {
+        font-size: 1em;
+        margin: 0;
+      }
+
+      /* --------------------- Media Queries --------------------- */
+
+      @media (max-width: 80em) {
+        html {
+          font-size: 0.88em;
+        }
+      }
+
+      @media (max-width: 60em) {
+        html {
+          font-size: 0.77em;
+        }
+      }
+
+      @media (max-width: 37.5em) {
+        html {
+          font-size: 0.55em;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

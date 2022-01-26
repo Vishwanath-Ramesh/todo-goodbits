@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "target": "es6",
+    "paths": {
+      "pages/*": [
+        "src/views/pages/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "**/node_modules",
+    "dist",
+    "public"
+  ],
+  "include": [
+    "src/**/*.js",
+  ],
+}

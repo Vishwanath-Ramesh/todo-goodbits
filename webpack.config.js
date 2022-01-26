@@ -1,7 +1,8 @@
-const { BannerPlugin } = require('webpack')
+const webpack = require('webpack')
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin') // minify/minimize your JavaScript
 // const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin') // * Not supported since webpack 5
 
 module.exports = (env) => ({
@@ -13,14 +14,30 @@ module.exports = (env) => ({
     path: path.resolve(__dirname, 'dist'), // Output build directory name. From v5, this is default
     publicPath: '/', // The bundled files will be available in the browser under this path. Eg. A request to a chunk will look like /1.chunk.js. In our case('/'), it's relative to HTML page
   },
+  optimization: {
+    minimize: env.NODE_ENV === 'production',
+    minimizer: [
+      new TerserPlugin({
+        extractComments: {
+          condition: /^\**!|@preserve|@license|@cc_on/i,
+          filename: (fileData) => {
+            return `${fileData.filename}.LICENSE.txt${fileData.query}`
+          },
+          banner: (licenseFile) => {
+            return `License information can be found in ${licenseFile}`
+          },
+        },
+      }),
+    ],
+  },
   plugins: [
     new CleanWebpackPlugin(), // Remove HTML file and re-create on each build
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
     }),
-    new BannerPlugin({
-      banner: `Written by Vishwanath Rameshbabu <vishwanathr.dev@outlook.com>, `,
-    }),
+    new webpack.BannerPlugin(
+      `Written by Vishwanath Rameshbabu <vishwanathr.dev@outlook.com>, `
+    ),
     // * Not supported since webpack 5
     // new ScriptExtHtmlWebpackPlugin({
     //   defaultAttribute: 'async',
@@ -57,5 +74,11 @@ module.exports = (env) => ({
         use: ['file-loader'],
       },
     ],
+  },
+  resolve: {
+    alias: {
+      pages: path.resolve(__dirname, 'src', 'views', 'pages'),
+      components: path.resolve(__dirname, 'src', 'views', 'components'),
+    },
   },
 })
