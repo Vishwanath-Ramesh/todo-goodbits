@@ -6,7 +6,7 @@ import {
   Redirect,
 } from 'react-router-dom'
 
-const PageNotFound = lazy(() => import('pages/PageNotFound/PageNotFound'))
+const PageNotFound = lazy(() => import('../pages/PageNotFound'))
 
 const Routes = () => {
   return (

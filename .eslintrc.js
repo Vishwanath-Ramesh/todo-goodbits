@@ -14,7 +14,12 @@ module.exports = {
     react: {
       version: 'detect', // The version of React. "detect" - automatically picks the version which is currently installed.
     },
-    'import/resolver': 'webpack', // Added for resolving webpaack aliases
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    }, // Added for resolving webpaack aliases
   },
   overrides: [
     {
