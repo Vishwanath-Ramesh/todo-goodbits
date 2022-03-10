@@ -6,14 +6,17 @@ import {
   Redirect,
 } from 'react-router-dom'
 
+import Spinner from '../components/common/Spinner'
+
 const PageNotFound = lazy(() => import('../pages/PageNotFound'))
+const Home = lazy(() => import('../pages/Home'))
 
 const Routes = () => {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Spinner show />}>
         <Switch>
-          <Route exact path="/" component={() => <div>Hi there!</div>} />
+          <Route exact path="/" component={Home} />
           <Route path="/404" component={PageNotFound} />
           <Redirect to="/404" />
         </Switch>

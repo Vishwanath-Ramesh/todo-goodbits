@@ -78,7 +78,8 @@ module.exports = (env) => ({
   resolve: {
     alias: {
       pages: path.resolve(__dirname, 'src/views/pages'),
-      components: path.resolve(__dirname, 'src/views/components'),
+      components$: path.resolve(__dirname, 'src/views/components'),
+      '@mui/styled-engine': '@mui/styled-engine-sc',
     },
   },
 })
