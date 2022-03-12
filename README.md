@@ -1,14 +1,14 @@
 ## Summary
 
-This is a boilerplate setup project for React application
-
-For [Fullstack boilerplate](https://github.com/Vishwanath-Ramesh/fullstack-boilerplate)
+A simple React todo list application developed as a part of GoodBits machine test
 
 ## Tools & Libraries used
 
 - React
 - JavaScript
-- Axios
+- Redux
+- Styled components
+- Material UI
 - Webpack
 - Babel
 - Eslint
@@ -39,3 +39,6 @@ npm run dev
 or
 yarn dev
 ```
+
+You can also open
+[the deployed app on Heroku](https://goodbits-todolists.vercel.app/).

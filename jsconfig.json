@@ -1,24 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "module": "commonjs",
     "target": "es6",
     "paths": {
-      "pages": [
-        "src/views/pages/*"
-      ],
-      "components/*": [
-        "src/views/components/*"
-      ]
+      "pages/*": ["./src/views/pages/*"],
+      "components/*": ["./src/views/components/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "**/node_modules",
-    "dist",
-    "public"
-  ],
-  "include": [
-    "src/**/*.js"
-  ]
+  "exclude": ["node_modules", "dist", "public"],
+  "include": ["src/**/*"]
 }
