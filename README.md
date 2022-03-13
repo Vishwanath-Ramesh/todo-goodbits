@@ -41,4 +41,4 @@ yarn dev
 ```
 
 You can also open
-[the deployed app on Heroku](https://goodbits-todolists.vercel.app/).
+[the deployed app on Heroku](https://goodbits-todolist.web.app/).
