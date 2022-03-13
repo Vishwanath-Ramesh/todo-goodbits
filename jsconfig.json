@@ -5,7 +5,8 @@
     "target": "es6",
     "paths": {
       "pages/*": ["./src/views/pages/*"],
-      "components/*": ["./src/views/components/*"]
+      "components/*": ["./src/views/components/*"],
+      "@mui/styled-engine": ["@mui/styled-engine-sc"]
     }
   },
   "exclude": ["node_modules", "dist", "public"],
